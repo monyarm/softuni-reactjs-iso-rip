@@ -3,13 +3,10 @@ import PropTypes from "prop-types";
 import { injectIntl, intlShape, FormattedMessage } from "react-intl";
 import reactCookie from "react-cookie";
 import styles from "./PostCreateWidget.css";
-import { getGames, getGamesRequest } from "../../../Game/GameActions";
 import { connect } from "react-redux";
 
 export class PostCreateWidget extends Component {
-  componentDidMount() {
-    this.props.dispatch(getGamesRequest(""));
-  }
+  componentDidMount() {}
 
   addPost = () => {
     const nameRef = reactCookie.load("mernAuth").u;
@@ -97,9 +94,7 @@ PostCreateWidget.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {
-    games: getGames(state)
-  };
+  return {};
 }
 export default injectIntl(
   connect(
